@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+  import React from "react";
+  import CardBox from "./CardBox";
+  import HandOver from "./Tabs";
+  import SearchCard from "./Search";
+  import Sales from "./Sales";
+  import zhCN from 'antd/locale/zh_CN';
+  import { ConfigProvider } from 'antd';
+  import Transformation from "./Transformation";
+  
+  const App = () => {
+    return(
+      <div>
+        {/* ConfigProvider是来进行全局设置的 */}
+        <ConfigProvider locale={zhCN}>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+          <CardBox />
+          <HandOver />
+          <SearchCard />
+          <Sales/>
+          <Transformation/>
 
-export default App;
+        </ConfigProvider>  
+        
+      </div>
+    )
+}    
+  export default App;
